@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>26b547d0-26c1-4fdb-983c-55d7445a4e90</rd:ReportID>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="ManualEntry">
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>ENTERDATA</DataProvider>
+        <ConnectString />
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:DataSourceID>df05c705-3df9-4cb7-a58e-b1dc94381a39</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="MSSQLserver">
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=DESKTOP-9640JGI\OKEYOKIGBO;Initial Catalog=CPI</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:DataSourceID>064212c0-b593-4855-9872-ec4fac1bd01d</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="CPI">
+      <Query>
+        <DataSourceName>MSSQLserver</DataSourceName>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational">
+            <SelectedColumns>
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="series_id" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="area_code" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="item_code" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="periodicity_code" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="base_id" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="seasonality_code" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="begin_year" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="begin_period" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="end_year" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="end_period" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="year" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="period" />
+              <ColumnExpression ColumnOwner="CPIData" ColumnName="value" />
+            </SelectedColumns>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <CommandText>SELECT
+  CPIData.series_id
+  ,CPIData.area_code
+  ,CPIData.item_code
+  ,CPIData.periodicity_code
+  ,CPIData.base_id
+  ,CPIData.seasonality_code
+  ,CPIData.begin_year
+  ,CPIData.begin_period
+  ,CPIData.end_year
+  ,CPIData.end_period
+  ,CPIData.[year]
+  ,CPIData.period
+  ,CPIData.[value]
+FROM
+  CPIData</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="series_id">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>series_id</DataField>
+        </Field>
+        <Field Name="area_code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>area_code</DataField>
+        </Field>
+        <Field Name="item_code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>item_code</DataField>
+        </Field>
+        <Field Name="periodicity_code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>periodicity_code</DataField>
+        </Field>
+        <Field Name="base_id">
+          <rd:TypeName>System.Byte</rd:TypeName>
+          <DataField>base_id</DataField>
+        </Field>
+        <Field Name="seasonality_code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>seasonality_code</DataField>
+        </Field>
+        <Field Name="begin_year">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>begin_year</DataField>
+        </Field>
+        <Field Name="begin_period">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>begin_period</DataField>
+        </Field>
+        <Field Name="end_year">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>end_year</DataField>
+        </Field>
+        <Field Name="end_period">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>end_period</DataField>
+        </Field>
+        <Field Name="year">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>year</DataField>
+        </Field>
+        <Field Name="period">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>period</DataField>
+        </Field>
+        <Field Name="value">
+          <rd:TypeName>System.Double</rd:TypeName>
+          <DataField>value</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="CPIitems">
+      <Query>
+        <DataSourceName>MSSQLserver</DataSourceName>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational">
+            <SelectedColumns>
+              <ColumnExpression ColumnOwner="CPIItem" ColumnName="item_code" />
+              <ColumnExpression ColumnOwner="CPIItem" ColumnName="item_name" />
+              <ColumnExpression ColumnOwner="CPIItem" ColumnName="display_level" />
+              <ColumnExpression ColumnOwner="CPIItem" ColumnName="selectable" />
+              <ColumnExpression ColumnOwner="CPIItem" ColumnName="sort_sequence" />
+            </SelectedColumns>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <CommandText>SELECT
+  CPIItem.item_code
+  ,CPIItem.item_name
+  ,CPIItem.display_level
+  ,CPIItem.selectable
+  ,CPIItem.sort_sequence
+FROM
+  CPIItem</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="item_code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>item_code</DataField>
+        </Field>
+        <Field Name="item_name">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>item_name</DataField>
+        </Field>
+        <Field Name="display_level">
+          <rd:TypeName>System.Byte</rd:TypeName>
+          <DataField>display_level</DataField>
+        </Field>
+        <Field Name="selectable">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>selectable</DataField>
+        </Field>
+        <Field Name="sort_sequence">
+          <rd:TypeName>System.Int16</rd:TypeName>
+          <DataField>sort_sequence</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="CPIArea">
+      <Query>
+        <DataSourceName>MSSQLserver</DataSourceName>
+        <rd:DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/ReportingServices/QueryDefinition/Relational">
+            <SelectedColumns>
+              <ColumnExpression ColumnOwner="CPIArea" ColumnName="area_code" />
+              <ColumnExpression ColumnOwner="CPIArea" ColumnName="area_name" />
+              <ColumnExpression ColumnOwner="CPIArea" ColumnName="display_level" />
+              <ColumnExpression ColumnOwner="CPIArea" ColumnName="selectable" />
+              <ColumnExpression ColumnOwner="CPIArea" ColumnName="sort_sequence" />
+            </SelectedColumns>
+          </QueryDefinition>
+        </rd:DesignerState>
+        <CommandText>SELECT
+  CPIArea.area_code
+  ,CPIArea.area_name
+  ,CPIArea.display_level
+  ,CPIArea.selectable
+  ,CPIArea.sort_sequence
+FROM
+  CPIArea</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="area_code">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>area_code</DataField>
+        </Field>
+        <Field Name="area_name">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>area_name</DataField>
+        </Field>
+        <Field Name="display_level">
+          <rd:TypeName>System.Byte</rd:TypeName>
+          <DataField>display_level</DataField>
+        </Field>
+        <Field Name="selectable">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>selectable</DataField>
+        </Field>
+        <Field Name="sort_sequence">
+          <rd:TypeName>System.Byte</rd:TypeName>
+          <DataField>sort_sequence</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="ReportTitle">
+            <rd:WatermarkTextbox>Title</rd:WatermarkTextbox>
+            <rd:DefaultName>ReportTitle</rd:DefaultName>
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontFamily>Segoe UI Light</FontFamily>
+                      <FontSize>28pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Height>0.5in</Height>
+            <Width>5.5in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.03611in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.03611in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.03611in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.1875in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox10">
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox16">
+                          <rd:DefaultName>Textbox16</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>item code</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox14">
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>area code</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.1875in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="value">
+                          <rd:DefaultName>value</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!value.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="item_code">
+                          <rd:DefaultName>item_code</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!item_code.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial</FontFamily>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="area_code1">
+                          <rd:DefaultName>area_code1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!area_code.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details1" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>CPI</DataSetName>
+            <Top>1.71333in</Top>
+            <Left>0.705in</Left>
+            <Height>0.375in</Height>
+            <Width>4.10833in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>2.25in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>6in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.2in</Top>
+              <Left>4in</Left>
+              <Height>0.25in</Height>
+              <Width>2in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+</Report>
